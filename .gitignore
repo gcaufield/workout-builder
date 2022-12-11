@@ -1,5 +1,8 @@
-build/
 compile_commands.json
 
 .tup/
 .cache/
+
+*.o
+*.a
+builder

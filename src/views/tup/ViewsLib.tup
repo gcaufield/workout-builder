@@ -1,0 +1,22 @@
+ifneq ($(INC_VIEWS_LIB),y)
+   INC_VIEWS_LIB=y
+   include_rules
+
+   INCLUDES += -I$(TUP_CWD)
+   INCLUDES += -I$(TUP_CWD)/..
+   INCLUDES += -I/usr/local/lib/wx/include/gtk3-unicode-3.3\
+               -I/usr/local/include/wx-3.3\
+
+   LIB_NAME = viewslib.a
+   STATIC_LIBS = $(TUP_CWD)/$(LIB_NAME) $(STATIC_LIBS)
+   LDFLAGS += -L/usr/local/lib\
+              -pthread\
+              -lwx_gtk3u_xrc-3.3\
+              -lwx_gtk3u_html-3.3\
+              -lwx_gtk3u_qa-3.3\
+              -lwx_gtk3u_core-3.3\
+              -lwx_baseu_xml-3.3\
+              -lwx_baseu_net-3.3\
+              -lwx_baseu-3.3
+   GENERATED_FILES += $(TUP_CWD)/*.h
+endif

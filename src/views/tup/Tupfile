@@ -1,0 +1,14 @@
+include_rules
+include &(LIB_VIEWS)
+
+CXXFLAGS += -D_FILE_OFFSET_BITS=64\
+            -DWXUSINGDLL\
+            -D__WXGTK__\
+            -pthread
+
+SOURCES += ../MainFrame.cpp
+
+: foreach $(SOURCES) |> !cxx |> {cxx_out}
+
+: {cxx_out} |> !createLibrary |> $(LIB_NAME)
+
