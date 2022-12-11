@@ -1,0 +1,12 @@
+ifneq ($(INC_FIT_LIB),y)
+   INC_FIT_LIB=y
+   include_rules
+
+   INCLUDES += -I$(TUP_CWD)
+   INCLUDES += -I$(TUP_CWD)/..
+
+   LIB_NAME = fitsdk.a
+   STATIC_LIBS = $(TUP_CWD)/$(LIB_NAME) $(STATIC_LIBS)
+   LDFLAGS = $(LDFLAGS)
+   GENERATED_FILES += $(TUP_CWD)/*.h
+endif

@@ -11,4 +11,3 @@ SOURCES += ../main.cpp
 : foreach $(SOURCES) |> !cxx |> {cxx_out}
 
 : {cxx_out} |> !createExecutable |> builder
-

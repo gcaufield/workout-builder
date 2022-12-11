@@ -5,6 +5,7 @@ ifneq ($(INC_RULES),y)
   # Folders
   ###################################################################
   &LIB_VIEWS = src/views/tup/ViewsLib.tup
+  &LIB_FIT = src/fit/tup/FitSdkLib.tup
 
   ###################################################################
   # Defines

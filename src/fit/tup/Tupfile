@@ -1,0 +1,10 @@
+include_rules
+include &(LIB_FIT)
+
+SOURCES += ../*.cpp
+CXXFLAGS+= -Wno-unused-but-set-variable\
+           -Wno-catch-value
+
+: foreach $(SOURCES) |> !cxx |> {cxx_out}
+
+: {cxx_out} |> !createLibrary |> $(LIB_NAME)

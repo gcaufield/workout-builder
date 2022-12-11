@@ -11,4 +11,3 @@ SOURCES += ../MainFrame.cpp
 : foreach $(SOURCES) |> !cxx |> {cxx_out}
 
 : {cxx_out} |> !createLibrary |> $(LIB_NAME)
-
